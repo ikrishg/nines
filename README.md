@@ -62,13 +62,16 @@ Seam: `nines.run(task, *, target, budget) -> Receipt`. Claims map: [`docs/claims
 ## Demo (~2 min)
 
 ```bash
-pip install -e ".[dev]"
+pip install -e ".[demo]"
 export ANTHROPIC_API_KEY=...
 
-# Smallest demo — open examples/minimal.py, then run it
+# Stage UI — Haiku default, live attempts, green/red Receipt
+streamlit run demo/app.py
+
+# Code-open fallback — open examples/minimal.py, then run it
 python examples/minimal.py
 
-# Full arc: clean win → honest refuse
+# Full terminal arc: clean win → honest refuse
 python examples/demo_arc.py --models opus,sonnet
 
 python -m demo.compare --fallback --trials 25 --target 0.7

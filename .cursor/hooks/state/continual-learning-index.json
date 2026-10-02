@@ -1,0 +1,21 @@
+{
+  "version": 1,
+  "transcripts": {
+    "/Users/krish/.cursor/projects/Users-krish-git-kkrishguptaa-nines/agent-transcripts/0d64280e-b88b-49b2-b5ae-d50d0a1f93c7/0d64280e-b88b-49b2-b5ae-d50d0a1f93c7.jsonl": {
+      "mtimeMs": 1786182046629,
+      "processedAtMs": 1786182180765
+    },
+    "/Users/krish/.cursor/projects/Users-krish-git-kkrishguptaa-nines/agent-transcripts/0d64280e-b88b-49b2-b5ae-d50d0a1f93c7/subagents/81119922-6dbc-41a4-ab45-410ccf5417e2.jsonl": {
+      "mtimeMs": 1786182092073,
+      "processedAtMs": 1786182180765
+    },
+    "/Users/krish/.cursor/projects/Users-krish-git-kkrishguptaa-nines/agent-transcripts/7fcd48c3-fa8e-49d0-8f48-d4fdb7bc5f21/7fcd48c3-fa8e-49d0-8f48-d4fdb7bc5f21.jsonl": {
+      "mtimeMs": 1786173505040,
+      "processedAtMs": 1786182180765
+    },
+    "/Users/krish/.cursor/projects/Users-krish-git-kkrishguptaa-nines/agent-transcripts/fa96f5dd-d00b-4fc7-a584-c55189d01c67/fa96f5dd-d00b-4fc7-a584-c55189d01c67.jsonl": {
+      "mtimeMs": 1786171060217,
+      "processedAtMs": 1786182180765
+    }
+  }
+}

@@ -1,6 +1,6 @@
 # Nines — pitch deck script + Remotion video package
 
-Audience: Push to Prod judges (Anthropic architects + AI ops).  
+Audience: Push to Prod judges (Anthropic architects + AI ops).
 Tone: technical, honest, visual-first. Not CEO fluff.
 
 **Built assets:** Remotion app at [`remotion/`](remotion/) — compositions `PitchDeck` + `DemoReel`. See [`remotion/README.md`](remotion/README.md).
@@ -19,18 +19,19 @@ Tone: technical, honest, visual-first. Not CEO fluff.
 
 ## 1. Pitch deck script (~90 seconds)
 
-**Rule:** one idea per slide. Never put the live terminal on a slide — that is the demo.  
+**Rule:** one idea per slide. Never put the live terminal on a slide — that is the demo.
 Headings below match `PitchDeck` in Remotion Studio.
 
 ### Slide 1 — Title
-**On screen:** Giant **NINES**. Sub: *Reliability compiler for Claude*. Mono: `Apache 2.0 · github.com/kkrishguptaa/nines`.  
-**Say:**  
+**On screen:** Giant **NINES**. Sub: *Reliability compiler for Claude*. Mono: `Apache 2.0 · github.com/kkrishguptaa/nines`.
+**Say:**
 > Agents are right most of the time. Shipping needs a number — and a system that refuses when it can’t prove it.
 
 ### Slide 2 — Hope is not a reliability bar
-**On screen:** Two panels — “Ask Claude once / then hope” vs “Declared reliability / missing today”.  
-**Say:**  
-> Today you pick a model and hope. Nothing lets you declare a reliability target and spend compute until the math clears it — or stop honestly.
+**On screen:** Two panels — “Ask Claude once / then hope” vs “Declared reliability / missing today”.
+**Say:**
+> Today you pick a model and hope. Nothing lets you declare a reliability target and spend compute until the m
+ath clears it — or stop honestly.
 
 ### Slide 3 — One public seam
 **On screen:** Code card:
@@ -41,7 +42,7 @@ receipt = run(task, target=0.8, budget=Budget(...))
 # else        → human
 ```
 
-**Say:**  
+**Say:**
 > One public seam. You name the bar and the budget. You get a Receipt — green ship or red escalate. Never a silent best-guess when nothing passed.
 
 ### Slide 4 — Verifier first, then evidence
@@ -51,12 +52,12 @@ receipt = run(task, target=0.8, budget=Budget(...))
 
 Callouts: *independent* · *known-bad* · *model×effort×framing* · *lower bound ≥ target*.
 
-**Say:**  
+**Say:**
 > Verifier first — from the task alone. Canary kills checkers that accept garbage. Then diverse solvers. Every candidate gated. `target_met` only if the Wilson lower bound clears your target.
 
 ### Slide 5 — Wilson, not Wald
-**On screen:** §5 diagram under “15 passes / 15 trials”. Caption about Wald lying at the edges.  
-**Say:**  
+**On screen:** §5 diagram under “15 passes / 15 trials”. Caption about Wald lying at the edges.
+**Say:**
 > Textbook Wald intervals collapse at perfect or zero passes. Wilson stays honest at the edges. Fifteen perfect trials → lower bound about **0.80**. That’s why attempt counts are 15 / 25 / 40 for 0.7 / 0.8 / 0.9 — not arbitrary.
 
 ### Slide 6 — You pay for evidence
@@ -70,17 +71,17 @@ Callouts: *independent* · *known-bad* · *model×effort×framing* · *lower bou
 
 Footer: *Setup is about two calls. The rest is sampling.*
 
-**Say:**  
+**Say:**
 > Setup is almost free — two calls, three if canary regenerates. The rest is sampling. You’re paying for evidence, and you choose how much.
 
 ### Slide 7 — Clear the bar — or refuse
-**On screen:** Split receipts — green `is_palindrome` · `target_met: true` · 15/15 · ~$0.02; red `parse_money` · `target_met: false` · opus 5/8 · sonnet 7/8 · haiku 1/9.  
-**Say:**  
+**On screen:** Split receipts — green `is_palindrome` · `target_met: true` · 15/15 · ~$0.02; red `parse_money` · `target_met: false` · opus 5/8 · sonnet 7/8 · haiku 1/9.
+**Say:**
 > Easy task: you didn’t gain a better answer — you gained **knowing**. Hard task: the pool fails, and we **refuse**. Everyone else will show something working. We can show a product declining to lie.
 
 ### Slide 8 — What we claim
-**On screen:** Claimed vs not claimed columns + Stroebl-style caveat (checker-pass rate ≠ ground truth).  
-**Say:**  
+**On screen:** Claimed vs not claimed columns + Stroebl-style caveat (checker-pass rate ≠ ground truth).
+**Say:**
 > We’re infrastructure around Claude — Apache 2.0, embeddable. Judges: ask us anything about the Receipt. Demo next.
 
 **Q&A lines (memorize):**
@@ -108,8 +109,8 @@ Constraints:
 
 ## 3. Demo video script — ad-lib VO (~85s)
 
-**Source of truth:** composition `DemoReel` (`docs/pitch/remotion/src/compositions/DemoReel.tsx`), 2550 frames @ 30fps.  
-**Render:** `cd docs/pitch/remotion && npm run render:reel` → `out/nines-reel.mp4`.  
+**Source of truth:** composition `DemoReel` (`docs/pitch/remotion/src/compositions/DemoReel.tsx`), 2550 frames @ 30fps.
+**Render:** `cd docs/pitch/remotion && npm run render:reel` → `out/nines-reel.mp4`.
 **Brand:** GitHub only — do **not** say or show `nines.run` as a website.
 
 | Time | On screen (exact beat) | You say (ad-lib around this) |
@@ -131,14 +132,14 @@ Constraints:
 
 Matches `DemoReel` sequences — do not drift from these times without updating the composition.
 
-1. **0–5s** Title  
-2. **5–16s** Problem compounding (PRD math)  
-3. **16–23s** Single-shot hope  
-4. **23–42s** How Nines works (setup + sample loop)  
-5. **42–52s** Wald vs Wilson  
-6. **52–62s** Green Receipt  
-7. **62–74s** Red Receipt  
-8. **74–85s** End card  
+1. **0–5s** Title
+2. **5–16s** Problem compounding (PRD math)
+3. **16–23s** Single-shot hope
+4. **23–42s** How Nines works (setup + sample loop)
+5. **42–52s** Wald vs Wilson
+6. **52–62s** Green Receipt
+7. **62–74s** Red Receipt
+8. **74–85s** End card
 
 Design tokens: charcoal `#0E1116`, paper `#F4F1EA`, accent amber `#F5A524`. Motion: Bézier ease-out entrances + soft beat exits. Numbers in `src/data/copy.ts`.
 
@@ -152,14 +153,14 @@ Design tokens: charcoal `#0E1116`, paper `#F4F1EA`, accent amber `#F5A524`. Moti
 \]
 At \(\hat p = 1\) (or 0), width **0** → false certainty after any perfect streak.
 
-**Wilson (what Nines uses):** lower bound stays honest at the edges.  
-At 15/15 (z≈1.96): lower bound ≈ **0.80**.  
+**Wilson (what Nines uses):** lower bound stays honest at the edges.
+At 15/15 (z≈1.96): lower bound ≈ **0.80**.
 So: **15 → ~0.80**, **25 → ~0.87**, **40 → ~0.91** — minimum *n* to clear 0.7 / 0.8 / 0.9 at 100% pass.
 
 ---
 
 ## Stage pairing
 
-1. Play the **85s** reel (`out/nines-reel.mp4`) **or** skip to live.  
-2. Live: `python examples/demo_arc.py --models opus,sonnet` — clean win → refuse.  
+1. Play the **85s** reel (`out/nines-reel.mp4`) **or** skip to live.
+2. Live: `python examples/demo_arc.py --models opus,sonnet` — clean win → refuse.
 3. If asked about 15/15, use the stage line in `docs/demo-commands.md`, then point at the red receipt.

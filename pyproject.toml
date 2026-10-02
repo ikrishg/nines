@@ -9,6 +9,7 @@ dependencies = ["anthropic", "hypothesis", "httpx", "rich"]
 
 [project.optional-dependencies]
 dev = ["pytest", "pytest-asyncio"]
+demo = ["streamlit"]
 
 [build-system]
 requires = ["hatchling"]
